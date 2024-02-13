@@ -5,10 +5,6 @@ public class TweenText : MonoBehaviour
     public float scaleFactor;
     public float tweenTime;
 
-    void Start()
-    {
-
-    }
 
     public void ScaleUp()
     {
