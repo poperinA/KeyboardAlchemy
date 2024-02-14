@@ -230,7 +230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &242013280
 RectTransform:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 897600702}
-  m_Father: {fileID: 326019674}
+  m_Father: {fileID: 1613957921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -597,7 +597,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1613957921}
-  - {fileID: 242013280}
   m_Father: {fileID: 747357886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -622,7 +621,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1613957922}
           m_TargetAssemblyTypeName: ScaleAnim, Assembly-CSharp
           m_MethodName: ScaleUp
           m_Mode: 1
@@ -638,7 +637,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1613957922}
           m_TargetAssemblyTypeName: ScaleAnim, Assembly-CSharp
           m_MethodName: ScaleDown
           m_Mode: 1
@@ -4323,6 +4322,7 @@ RectTransform:
   - {fileID: 541301610}
   - {fileID: 591700827}
   - {fileID: 2064362630}
+  - {fileID: 242013280}
   m_Father: {fileID: 326019674}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
