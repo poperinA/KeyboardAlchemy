@@ -5,11 +5,50 @@ public class GameSelectManager : MonoBehaviour
 {
     public GameObject gamePrefab; // Reference to the prefab containing UI panel for each game
     public Transform viewport; // Reference to the viewport GameObject
+    public GameObject gameDataPrefab; // Reference to the Prefab Variant containing the GameData
 
-    public void CreateNewGame()
+    private static GameSelectManager instance;
+
+    private void Awake()
+    {
+        // Check if an instance already exists
+        if (instance == null)
+        {
+            // If not, set this as the instance
+            instance = this;
+
+            // Make the GameObject persist through scenes
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // If an instance already exists, destroy this GameObject
+            Destroy(gameObject);
+        }
+    }
+
+    public static GameSelectManager GetInstance()
+    {
+        return instance;
+    }
+
+    public void CreateNewGame(string characterName, string creationDate)
     {
         // Instantiate the game prefab
         GameObject newGame = Instantiate(gamePrefab, viewport);
+
+        // Instantiate the game data prefab variant
+        GameObject newGameDataObject = Instantiate(gameDataPrefab);
+
+        // Get the GameData component from the instantiated game data prefab variant
+        GameData newGameData = newGameDataObject.GetComponent<GameData>();
+
+        // Populate the new GameData instance with character name and creation date
+        newGameData.characterName = characterName;
+        newGameData.creationDate = creationDate;
+
+        // Set the GameData instance for the GameDisplay component
+        newGame.GetComponent<GameDisplay>().game = newGameData;
 
         // Get the Event Trigger component of the new game panel
         EventTrigger eventTrigger = newGame.GetComponent<EventTrigger>();

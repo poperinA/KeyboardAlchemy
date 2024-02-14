@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8771375684588822593}
   - component: {fileID: 8537503686098478102}
   - component: {fileID: 5049575254959565083}
+  - component: {fileID: 8141571574386162300}
   m_Layer: 5
   m_Name: savedGame
   m_TagString: Untagged
@@ -92,6 +93,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleFactor: 1.02
   tweenTime: 1.3
+--- !u!114 &8141571574386162300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251672422229804662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6c7ce0158df9c4783680f8c0eb63d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7372964015800521533
 GameObject:
   m_ObjectHideFlags: 0
