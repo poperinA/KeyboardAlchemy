@@ -207,9 +207,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 61311793}
+        m_TargetAssemblyTypeName: CharacterSelect, Assembly-CSharp
+        m_MethodName: SavePlayerInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 6106633848473929108, guid: 9b45e6f038f97344db2289670e0d6225, type: 3}
         m_TargetAssemblyTypeName: GameSelectManager, Assembly-CSharp
-        m_MethodName: CreateNewGame
+        m_MethodName: CreateNewGameWithInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -437,7 +449,7 @@ GameObject:
   - component: {fileID: 61311794}
   - component: {fileID: 61311793}
   m_Layer: 0
-  m_Name: CharacterManger
+  m_Name: CharacterManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,6 +467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a51fab3cecde84ba98dc35b9846a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterNameInput: {fileID: 393869758}
+  chosenGender: none
   Megan: {fileID: 1126152749}
   David: {fileID: 341964755}
 --- !u!4 &61311794

@@ -1,47 +1,24 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class GameSelectManager : MonoBehaviour
 {
-    public GameObject gamePrefab; // Reference to the prefab containing UI panel for each game
-    public Transform viewport; // Reference to the viewport GameObject
-    public GameObject gameDataPrefab; // Reference to the Prefab Variant containing the GameData
+    // Reference to the prefab containing UI panel for each game
+    public GameObject gamePrefab;
 
-    private static GameSelectManager instance;
+    // Reference to the viewport GameObject
+    public Transform viewport;
 
-    private void Awake()
-    {
-        // Check if an instance already exists
-        if (instance == null)
-        {
-            // If not, set this as the instance
-            instance = this;
+    // Reference to the GameData prefab variant
+    public GameData gameDataPrefab;
 
-            // Make the GameObject persist through scenes
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            // If an instance already exists, destroy this GameObject
-            Destroy(gameObject);
-        }
-    }
-
-    public static GameSelectManager GetInstance()
-    {
-        return instance;
-    }
-
+    // Method to create a new game with input parameters
     public void CreateNewGame(string characterName, string creationDate)
     {
         // Instantiate the game prefab
         GameObject newGame = Instantiate(gamePrefab, viewport);
 
         // Instantiate the game data prefab variant
-        GameObject newGameDataObject = Instantiate(gameDataPrefab);
-
-        // Get the GameData component from the instantiated game data prefab variant
-        GameData newGameData = newGameDataObject.GetComponent<GameData>();
+        GameData newGameData = Instantiate(gameDataPrefab);
 
         // Populate the new GameData instance with character name and creation date
         newGameData.characterName = characterName;
@@ -50,24 +27,17 @@ public class GameSelectManager : MonoBehaviour
         // Set the GameData instance for the GameDisplay component
         newGame.GetComponent<GameDisplay>().game = newGameData;
 
-        // Get the Event Trigger component of the new game panel
-        EventTrigger eventTrigger = newGame.GetComponent<EventTrigger>();
-        if (eventTrigger == null)
-        {
-            // Add Event Trigger component if not already added
-            eventTrigger = newGame.AddComponent<EventTrigger>();
-        }
+        // Additional initialization logic if needed
+    }
 
-        // Add Pointer Enter event
-        EventTrigger.Entry pointerEnterEntry = new EventTrigger.Entry();
-        pointerEnterEntry.eventID = EventTriggerType.PointerEnter;
-        pointerEnterEntry.callback.AddListener((data) => { newGame.GetComponent<ScaleAnim>().ScaleUp(); });
-        eventTrigger.triggers.Add(pointerEnterEntry);
+    // Wrapper method to create a new game with input obtained from other sources
+    public void CreateNewGameWithInput()
+    {
+        // Obtain character name and creation date from PlayerPrefs
+        string characterName = PlayerPrefs.GetString("CharacterName", "DefaultCharacterName");
+        string creationDate = PlayerPrefs.GetString("CreationDate", "DefaultCreationDate");
 
-        // Add Pointer Exit event
-        EventTrigger.Entry pointerExitEntry = new EventTrigger.Entry();
-        pointerExitEntry.eventID = EventTriggerType.PointerExit;
-        pointerExitEntry.callback.AddListener((data) => { newGame.GetComponent<ScaleAnim>().ScaleDown(); });
-        eventTrigger.triggers.Add(pointerExitEntry);
+        // Call CreateNewGame with obtained input
+        CreateNewGame(characterName, creationDate);
     }
 }

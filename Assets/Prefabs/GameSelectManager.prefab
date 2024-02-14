@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamePrefab: {fileID: 251672422229804662, guid: 7c106f9763ecc524395997dcc3d47262, type: 3}
   viewport: {fileID: 0}
+  gameDataPrefab: {fileID: 11400000, guid: ff8469ccbb1d58740be403277a83b687, type: 2}

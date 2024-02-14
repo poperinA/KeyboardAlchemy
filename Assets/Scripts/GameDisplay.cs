@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 public class GameDisplay : MonoBehaviour
 {
@@ -10,8 +9,17 @@ public class GameDisplay : MonoBehaviour
 
     void Start()
     {
-        CharacterName.text = game.characterName;
-        CreationDate.text = game.creationDate;
+        // Verify that the GameData instance is assigned
+        if (game != null)
+        {
+            // Access the character name and creation date
+            CharacterName.text = game.characterName;
+            CreationDate.text = game.creationDate;
+        }
+        else
+        {
+            Debug.LogWarning("GameData instance is not assigned.");
+        }
     }
-
 }
+
