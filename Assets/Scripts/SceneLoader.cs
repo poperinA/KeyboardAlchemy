@@ -3,12 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+
     private void Start()
     {
-        // Prevent this GameObject from being destroyed when loading a new scene
-        DontDestroyOnLoad(gameObject);
-
-        // Load the "Main Menu" scene
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -32,15 +29,6 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Room");
     }
 
-    public void BackToGameSelect()
-    {
-        SceneManager.LoadScene("Game Select");
-    }
-
-    public void CreateGame()
-    {
-        SceneManager.LoadScene("New Game");
-    }
 
     public void GoToGame()
     {

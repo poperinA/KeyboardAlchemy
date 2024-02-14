@@ -1,14 +1,18 @@
-using System;
 using UnityEngine;
 using TMPro;
 
 public class CharacterSelect : MonoBehaviour
 {
     public TextMeshProUGUI characterNameInput;
-    public string chosenGender = "none";
-
     public GameObject Megan;
     public GameObject David;
+    public GameSelectManager gameSelectManager; // Reference to the GameSelectManager
+
+    private void Start()
+    {
+        // Find the GameSelectManager in the scene
+        gameSelectManager = FindObjectOfType<GameSelectManager>();
+    }
 
     public void showMegan()
     {
@@ -38,8 +42,8 @@ public class CharacterSelect : MonoBehaviour
 
     public void SavePlayerInput()
     {
-
         string characterName = characterNameInput.text;
+        string chosenGender = "";
 
         // Determine chosen gender
         if (Megan.activeInHierarchy)
@@ -57,17 +61,14 @@ public class CharacterSelect : MonoBehaviour
         }
 
         // Get current date and time
-        string creationDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
-        // Log the inputs
-        Debug.Log("Character Name: " + characterName);
-        Debug.Log("Chosen Gender: " + chosenGender);
-        Debug.Log("Creation Date: " + creationDate);
+        string creationDate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
         // Save player input
         PlayerPrefs.SetString("CharacterName", characterName);
         PlayerPrefs.SetString("Gender", chosenGender);
         PlayerPrefs.SetString("CreationDate", creationDate);
-    }
 
+        // Create new game using GameSelectManager
+        gameSelectManager.CreateNewGameWithInput();
+    }
 }
