@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainMenuAnimations : MonoBehaviour
+public class ScaleAnim : MonoBehaviour
 {
     public float scaleFactor;
     public float tweenTime;
