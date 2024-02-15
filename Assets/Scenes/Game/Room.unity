@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fa6f967124db544932c93b6cc0eb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickEffect: {fileID: 0}
+  clickEffect: {fileID: 1098292841346188733, guid: c1b4fc22434fed448b885471a84e5f9d, type: 3}
   clickableLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fa6f967124db544932c93b6cc0eb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickEffect: {fileID: 0}
+  clickEffect: {fileID: 1098292841346188733, guid: c1b4fc22434fed448b885471a84e5f9d, type: 3}
   clickableLayers:
     serializedVersion: 2
     m_Bits: 64
