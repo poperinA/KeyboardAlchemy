@@ -9,23 +9,28 @@ public class GameUI : MonoBehaviour
     public PlayerController playerControllerM;
     public PlayerController playerControllerD;
 
+    public GameObject gameUI;
+    public GameObject WorkstationUI;
+    public GameObject PCSetupUI;
+
     public void Update()
     {
         PauseCheck();
     }
+
     public void ToggleOptions()
     {
         if (Options != null)
         {
             bool isActive = Options.activeSelf;
-
             Options.SetActive(!isActive);
         }
     }
 
     public void PauseCheck()
     {
-        if (Options.activeInHierarchy == true || AreYouSure.activeInHierarchy == true)
+        if (Options.activeInHierarchy == true || AreYouSure.activeInHierarchy == true 
+        || WorkstationUI.activeInHierarchy == true || PCSetupUI.activeInHierarchy == true)
         {
             Pause();
         }
@@ -37,7 +42,6 @@ public class GameUI : MonoBehaviour
 
     private void Pause()
     {
-
         if (playerControllerM != null && playerControllerM.enabled == true)
         {
             playerControllerM.enabled = false;
@@ -51,7 +55,6 @@ public class GameUI : MonoBehaviour
 
     private void Resume()
     {
-
         if (playerControllerM != null && playerControllerM.enabled == false)
         {
             playerControllerM.enabled = true;
@@ -94,6 +97,26 @@ public class GameUI : MonoBehaviour
         {
             AreYouSure.SetActive(false);
             Options.SetActive(true);
+        }
+    }
+
+    public void BackToGameW()
+    {
+        if (WorkstationUI != null)
+        {
+            WorkstationUI.SetActive(false);
+            gameUI.SetActive(true);
+            Resume();
+        }
+    }
+
+    public void BackToGamePC()
+    {
+        if (PCSetupUI != null)
+        {
+            PCSetupUI.SetActive(false);
+            gameUI.SetActive(true);
+            Resume();
         }
     }
 }
