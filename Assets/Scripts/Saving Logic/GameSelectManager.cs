@@ -3,16 +3,18 @@ using UnityEngine.EventSystems;
 
 public class GameSelectManager : MonoBehaviour
 {
-    // Reference to the prefab containing UI panel for each game
     public GameObject gamePrefab;
-
-    // Reference to the viewport GameObject
+    public GameObject ConfirmBtn;
+    public GameObject NoGamesText;
+    public GameObject selectGame;
     public Transform viewport;
-
-    // Reference to the GameData prefab variant
     public GameData gameDataPrefab;
+    public bool Empty = true;
 
-    // Wrapper method to create a new game with input obtained from other sources
+    public void Update()
+    {
+        Check();
+    }
     public void CreateNewGameWithInput()
     {
         // Obtain character name and creation date from PlayerPrefs
@@ -21,8 +23,9 @@ public class GameSelectManager : MonoBehaviour
 
         // Call CreateNewGame with obtained input
         CreateNewGame(characterName, creationDate);
-    }
 
+        Empty = false;
+    }
 
     // Method to create a new game with input parameters
     public void CreateNewGame(string characterName, string creationDate)
@@ -68,5 +71,14 @@ public class GameSelectManager : MonoBehaviour
         eventTrigger.triggers.Add(pointerExitEntry);
     }
 
-}
+    // Method to hide the no games text and show the confirm button
 
+    public void Check()
+    {
+        if(selectGame.activeInHierarchy == true && Empty == false)
+        {
+            NoGamesText.SetActive(false);
+        }
+    }
+
+}

@@ -7,6 +7,8 @@ public class GameDisplay : MonoBehaviour
     public TextMeshProUGUI CharacterName;
     public TextMeshProUGUI CreationDate;
 
+    public bool hasBeenClicked = false;
+
     void Start()
     {
         // Verify that the GameData instance is assigned
@@ -21,5 +23,10 @@ public class GameDisplay : MonoBehaviour
             Debug.LogWarning("GameData instance is not assigned.");
         }
     }
-}
+
+    public void Clicked()
+    {
+        hasBeenClicked = true;
+    }
+} 
 
