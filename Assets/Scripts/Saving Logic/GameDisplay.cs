@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+
 public class GameDisplay : MonoBehaviour
 {
     public GameData game;
@@ -8,6 +9,8 @@ public class GameDisplay : MonoBehaviour
     public TextMeshProUGUI CreationDate;
 
     public bool hasBeenClicked = false;
+
+    public GameObject ConfirmBtn; // Reference to the confirm button
 
     void Start()
     {
@@ -27,6 +30,11 @@ public class GameDisplay : MonoBehaviour
     public void Clicked()
     {
         hasBeenClicked = true;
-    }
-} 
 
+        // Enable the confirm button when the game is clicked
+        if (ConfirmBtn != null)
+        {
+            ConfirmBtn.SetActive(true);
+        }
+    }
+}

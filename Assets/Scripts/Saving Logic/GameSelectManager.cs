@@ -41,7 +41,12 @@ public class GameSelectManager : MonoBehaviour
         newGameData.creationDate = creationDate;
 
         // Set the GameData instance for the GameDisplay component
-        newGame.GetComponent<GameDisplay>().game = newGameData;
+        GameDisplay gameDisplay = newGame.GetComponent<GameDisplay>();
+        if (gameDisplay != null)
+        {
+            gameDisplay.game = newGameData;
+            gameDisplay.ConfirmBtn = ConfirmBtn; // Pass reference to the ConfirmBtn object
+        }
 
         // Add event trigger for scale animation
         AddScaleAnimationEventTrigger(newGame);
@@ -69,16 +74,20 @@ public class GameSelectManager : MonoBehaviour
         pointerExitEntry.eventID = EventTriggerType.PointerExit;
         pointerExitEntry.callback.AddListener((data) => { game.GetComponent<ScaleAnim>().ScaleDown(); });
         eventTrigger.triggers.Add(pointerExitEntry);
+
+        // Add Pointer Click event
+        EventTrigger.Entry pointerClickEntry = new EventTrigger.Entry();
+        pointerClickEntry.eventID = EventTriggerType.PointerClick;
+        pointerClickEntry.callback.AddListener((data) => { game.GetComponent<GameDisplay>().Clicked(); });
+        eventTrigger.triggers.Add(pointerClickEntry);
     }
 
     // Method to hide the no games text and show the confirm button
-
     public void Check()
     {
-        if(selectGame.activeInHierarchy == true && Empty == false)
+        if (selectGame.activeInHierarchy == true && Empty == false)
         {
             NoGamesText.SetActive(false);
         }
     }
-
 }
