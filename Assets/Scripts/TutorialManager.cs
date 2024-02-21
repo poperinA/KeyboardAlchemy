@@ -37,6 +37,9 @@ public class TutorialManager : MonoBehaviour
 
     public GameObject Tick;
     public bool bought = false;
+    public bool next = false;
+
+
     // Stage 4 screens
     public GameObject Stage4Screen1;
     public GameObject Stage4Screen2;
@@ -46,6 +49,17 @@ public class TutorialManager : MonoBehaviour
     public GameObject Stage4Screen6;
     public GameObject Stage4Screen7;
     public GameObject Stage4Screen8;
+
+    public GameObject pic1;
+    public GameObject pic2;
+    public GameObject pic3;
+    public GameObject pic4;
+    public GameObject pic5;
+
+    private bool stage4Screen7Shown = false;
+
+    public GameObject GameUI;
+    public bool Stage4End = false;
 
     private void Start()
     {
@@ -75,11 +89,48 @@ public class TutorialManager : MonoBehaviour
             ShowStage3Screen5();
         }
 
-        if(WorkstationUI.activeInHierarchy && bought == true)
+        if(WorkstationUI.activeInHierarchy && bought == true && next == false)
         {
             ShowStage4Screen1();
+            next = true;
         }
 
+        if (pic1.activeInHierarchy)
+        {
+            SetActiveAndDisableOthers(Stage4Screen3);
+        }
+
+        if (pic2.activeInHierarchy)
+        {
+            SetActiveAndDisableOthers(Stage4Screen4);
+        }
+
+        if (pic3.activeInHierarchy)
+        {
+            SetActiveAndDisableOthers(Stage4Screen5);
+        }
+
+        if (pic4.activeInHierarchy)
+        {
+            SetActiveAndDisableOthers(Stage4Screen6);
+        }
+
+        if (pic5.activeInHierarchy && !stage4Screen7Shown)
+        {
+            SetActiveAndDisableOthers(Stage4Screen7);
+            stage4Screen7Shown = true;
+            pic4.SetActive(false);
+            pic3.SetActive(false);
+            pic2.SetActive(false);
+            pic1.SetActive(false);
+        }
+
+
+
+        if (GameUI.activeInHierarchy && Stage4End == true)
+        {
+            ShowStage4Screen8();
+        }
     }
 
     #region Stage 1 methods
@@ -240,6 +291,11 @@ public class TutorialManager : MonoBehaviour
     public void ShowStage4Screen7()
     {
         SetActiveAndDisableOthers(Stage4Screen7);
+    }
+
+    public void closeScreen7()
+    {
+        Stage4Screen7.SetActive(false);
     }
 
     public void ShowStage4Screen8()
