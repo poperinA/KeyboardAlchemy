@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PCSetup : MonoBehaviour
 {
@@ -8,9 +9,23 @@ public class PCSetup : MonoBehaviour
     public GameObject Marketplace;
     public GameObject Buy;
     public GameObject BackBtn;
+    public GameObject boughtBundle;
+    public Button Bundle;
 
     public bool bought = false;
 
+    public void Update()
+    {
+        if(bought == true)
+        {
+            boughtBundle.SetActive(true);
+            Bundle.interactable = false;
+        }
+        else
+        {
+            boughtBundle.SetActive(false);
+        }
+    }
     public void openMarketplace()
     {
         Items.SetActive(false);
