@@ -61,6 +61,8 @@ public class TutorialManager : MonoBehaviour
     public GameObject GameUI;
     public bool Stage4End = false;
 
+    public GameObject tutorialManager;
+
     private void Start()
     {
         // Start with Stage 1, Screen 1
@@ -125,11 +127,10 @@ public class TutorialManager : MonoBehaviour
             pic1.SetActive(false);
         }
 
-
-
         if (GameUI.activeInHierarchy && Stage4End == true)
         {
             ShowStage4Screen8();
+            Stage4End = false;
         }
     }
 
@@ -296,11 +297,17 @@ public class TutorialManager : MonoBehaviour
     public void closeScreen7()
     {
         Stage4Screen7.SetActive(false);
+        Stage4End = true;
     }
 
     public void ShowStage4Screen8()
     {
         SetActiveAndDisableOthers(Stage4Screen8);
+    }
+
+    public void EndTutorial()
+    {
+        Stage4Screen8.SetActive(false);
     }
 
     #endregion
