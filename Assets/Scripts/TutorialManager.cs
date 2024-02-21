@@ -3,23 +3,46 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
-    public GameObject welcomePanel;
-    public Button startTutorialButton;
+    public GameObject Screen1;
+
+    public GameObject Screen2;
+
+    public GameObject Screen3;
+
+    public GameObject Screen4;
+
 
     private void Start()
     {
-        // Show the welcome panel when the scene starts
-        if (welcomePanel != null)
-            welcomePanel.SetActive(true);
+        if (Screen1 != null)
+        {
+            Screen1.SetActive(true);
+        } 
     }
 
-    public void StartTutorial()
+    public void Stage1_1()
     {
-        // Add logic to start the tutorial here
-        // For example, you can hide the welcome panel and proceed to the next step
-        if (welcomePanel != null)
-            welcomePanel.SetActive(false);
+        if (Screen1 != null)
+        {
+            Screen1.SetActive(false);
+        }
 
-        // Implement the next step of the tutorial here
+        if (Screen2 != null)
+        {
+            Screen2.SetActive(true);
+        }
+    }
+
+    public void Stage1_2()
+    {
+        if (Screen2 != null)
+        {
+            Screen2.SetActive(false);
+        }
+
+        if (Screen3 != null)
+        {
+            Screen3.SetActive(true);
+        }
     }
 }
