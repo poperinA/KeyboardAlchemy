@@ -11,6 +11,7 @@ public class GameSelectManager : MonoBehaviour
     public GameData gameDataPrefab;
     public bool Empty = true;
 
+
     public void Update()
     {
         Check();

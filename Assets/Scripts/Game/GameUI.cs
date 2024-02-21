@@ -1,7 +1,16 @@
 using UnityEngine;
+using TMPro;
 
 public class GameUI : MonoBehaviour
 {
+    public GameObject Megan;
+    public GameObject David;
+
+    public GameObject MeganImage;
+    public GameObject DavidImage;
+
+    public TextMeshProUGUI playerNameText;
+
     public GameObject Options;
     public GameObject Settings;
     public GameObject AreYouSure;
@@ -14,6 +23,36 @@ public class GameUI : MonoBehaviour
     public GameObject PCSetupUI;
 
     public GameObject TutorialPanel;
+
+    private void Start()
+    {
+        // Retrieve player name and gender from PlayerPrefs and display them
+        string playerName = PlayerPrefs.GetString("PlayerName", "DefaultPlayerName");
+        string playerGender = PlayerPrefs.GetString("PlayerGender", "DefaultPlayerGender");
+
+        // Set player name text
+        playerNameText.text = playerName;
+
+        // Activate the appropriate character and character image based on player's gender
+        if (playerGender == "Female")
+        {
+            Megan.SetActive(true);
+            MeganImage.SetActive(true);
+            David.SetActive(false);
+            DavidImage.SetActive(false);
+        }
+        else if (playerGender == "Male")
+        {
+            David.SetActive(true);
+            DavidImage.SetActive(true);
+            Megan.SetActive(false);
+            MeganImage.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Gender not found");
+        }
+    }
 
     public void Update()
     {

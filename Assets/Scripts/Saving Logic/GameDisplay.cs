@@ -36,5 +36,9 @@ public class GameDisplay : MonoBehaviour
         {
             ConfirmBtn.SetActive(true);
         }
+
+        // Set the player's name and gender in PlayerPrefs when the game is clicked
+        PlayerPrefs.SetString("PlayerName", game.characterName);
+        PlayerPrefs.SetString("PlayerGender", PlayerPrefs.GetString("PlayerGender"));
     }
 }

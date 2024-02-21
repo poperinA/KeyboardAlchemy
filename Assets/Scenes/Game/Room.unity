@@ -12643,7 +12643,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.483, y: 44.6}
+  m_AnchoredPosition: {x: 11.1, y: 38.7}
   m_SizeDelta: {x: 122.3734, y: 20.4934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &589797562
@@ -30233,6 +30233,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b220709b3475d47ac70d9f6280f2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Megan: {fileID: 1685315052}
+  David: {fileID: 689198902}
+  MeganImage: {fileID: 1901018942}
+  DavidImage: {fileID: 1707037298}
+  playerNameText: {fileID: 1499082149}
   Options: {fileID: 1774301843}
   Settings: {fileID: 2116169543}
   AreYouSure: {fileID: 552297255}
@@ -30291,7 +30296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.942, y: 71.9}
+  m_AnchoredPosition: {x: 23.257, y: 71.6}
   m_SizeDelta: {x: 147.2905, y: 17.3631}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1499082149
@@ -31533,7 +31538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42.5526, y: 17.131}
+  m_AnchoredPosition: {x: 42.854603, y: 20.477009}
   m_SizeDelta: {x: 185.8821, y: 15.952}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552125776
@@ -33491,7 +33496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4c64550ce350caa4aa83c84f983a2443, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 4c64550ce350caa4aa83c84f983a2443, type: 3}
       propertyPath: m_Controller

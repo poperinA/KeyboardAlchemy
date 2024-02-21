@@ -56,17 +56,14 @@ public class CharacterSelect : MonoBehaviour
         }
         else
         {
-            Debug.Log("Choose gender");
             return; // Exit the method if gender is not chosen
         }
 
-        // Get current date and time
-        string creationDate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
+        Debug.Log(chosenGender);
         // Save player input
         PlayerPrefs.SetString("CharacterName", characterName);
-        PlayerPrefs.SetString("Gender", chosenGender);
-        PlayerPrefs.SetString("CreationDate", creationDate);
+        PlayerPrefs.SetString("PlayerGender", chosenGender);
+        PlayerPrefs.SetString("CreationDate", System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
         // Create new game using GameSelectManager
         gameSelectManager.CreateNewGameWithInput();
