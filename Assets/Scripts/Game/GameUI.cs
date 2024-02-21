@@ -13,6 +13,8 @@ public class GameUI : MonoBehaviour
     public GameObject WorkstationUI;
     public GameObject PCSetupUI;
 
+    public GameObject TutorialPanel;
+
     public void Update()
     {
         PauseCheck();
@@ -107,6 +109,11 @@ public class GameUI : MonoBehaviour
             WorkstationUI.SetActive(false);
             gameUI.SetActive(true);
             Resume();
+
+            if (TutorialPanel.activeInHierarchy)
+            {
+                TutorialPanel.SetActive(false);
+            }
         }
     }
 
