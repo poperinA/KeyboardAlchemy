@@ -1,8 +1,12 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+
+    public Animator transition;
+    public float transitionTime;
 
     private void Start()
     {
@@ -32,12 +36,4 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Room");
         AudioManager.Instance.PlaySFX("BtnClick");
     }
-
-
-    public void GoToGame()
-    {
-        SceneManager.LoadScene("Room");
-        AudioManager.Instance.PlaySFX("BtnClick");
-    }
-
 }
