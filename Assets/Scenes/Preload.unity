@@ -464,9 +464,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8030398533031643243, guid: 76594e2fe95689246bb4ac9aa846ed3c, type: 3}
-      propertyPath: musicSounds.Array.data[0].name
-      value: StartTheme
+    - target: {fileID: 7308618689773445221, guid: 76594e2fe95689246bb4ac9aa846ed3c, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8576758100633246476, guid: 76594e2fe95689246bb4ac9aa846ed3c, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1028,68 +1028,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1001 &274971386
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 794461942220160544, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 620.28845
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 363.96524
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.5621142
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571027152024401731, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
---- !u!82 &274971387 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1213323303656057725, guid: b3aa4b1995c055746861d3500c0a23ea, type: 3}
-  m_PrefabInstance: {fileID: 274971386}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &285647430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,6 +1329,18 @@ MonoBehaviour:
         - m_Target: {fileID: 2074275853}
           m_TargetAssemblyTypeName: ScaleAnim, Assembly-CSharp
           m_MethodName: ScaleUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1725479304}
+          m_TargetAssemblyTypeName: ButtonHover, Assembly-CSharp
+          m_MethodName: PlayHoverSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2476,6 +2426,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1725479304}
+          m_TargetAssemblyTypeName: ButtonHover, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -3304,10 +3266,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-          m_MethodName: PlaySFX
-          m_Mode: 5
+        - m_Target: {fileID: 1725479304}
+          m_TargetAssemblyTypeName: ButtonHover, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3566,6 +3528,18 @@ MonoBehaviour:
         - m_Target: {fileID: 901233871}
           m_TargetAssemblyTypeName: ScaleAnim, Assembly-CSharp
           m_MethodName: ScaleUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1725479304}
+          m_TargetAssemblyTypeName: ButtonHover, Assembly-CSharp
+          m_MethodName: PlayHoverSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3908,10 +3882,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 5
+      - m_Target: {fileID: 1725479304}
+        m_TargetAssemblyTypeName: ButtonHover, Assembly-CSharp
+        m_MethodName: PlayHoverSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4381,6 +4355,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1725479304}
+          m_TargetAssemblyTypeName: ButtonHover, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -4796,6 +4782,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703256264}
   m_CullTransparentMesh: 1
+--- !u!1001 &1725479303
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2549980992077692722, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_Name
+      value: Button Hover Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 479.85773
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 263.84207
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.898202
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280725627480358425, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+--- !u!114 &1725479304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5077739341660849812, guid: c57b24ee8ecce664c8d2b1beae0dd0db, type: 3}
+  m_PrefabInstance: {fileID: 1725479303}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65980a6d4476a644a8ba8d2646fd2286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1760247519
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,13 +5631,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 274971387}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+        - m_Target: {fileID: 1725479304}
+          m_TargetAssemblyTypeName: ButtonHover, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 0994c12e202f342459a4212e7287f7e8, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: BtnClick
@@ -5609,7 +5663,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 274971387}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
           m_MethodName: PlayOneShot
           m_Mode: 2
@@ -5707,4 +5761,4 @@ SceneRoots:
   - {fileID: 1075428915}
   - {fileID: 239563334}
   - {fileID: 1526475377}
-  - {fileID: 274971386}
+  - {fileID: 1725479303}

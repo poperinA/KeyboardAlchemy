@@ -11,30 +11,34 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        // Ensure only one instance of AudioManager exists
         if (Instance == null)
         {
-            //if no instance exists, set this as the instance
+            // Set this as the instance if no instance exists
             Instance = this;
+            DontDestroyOnLoad(gameObject); // Don't destroy AudioManager when loading new scenes
         }
         else
         {
-            //if another instance exists, destroy this object
+            // Destroy this object if another instance exists
             Destroy(gameObject);
         }
     }
 
     private void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         PlayMusic("StartTheme");
+    }
 
-        //retrieve the current scene
-        Scene currentScene = SceneManager.GetActiveScene();
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
-        //get the name of the current scene
-        string sceneName = currentScene.name;
-        Debug.Log(sceneName);
-
-        if (sceneName == "Room")
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Room")
         {
             PlayMusic("GameplayTheme");
         }
@@ -66,7 +70,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             sfxSource.PlayOneShot(s.clip);
-            Debug.Log("playing sfx");
         }
     }
 }
