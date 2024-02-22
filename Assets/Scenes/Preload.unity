@@ -460,6 +460,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4448210180122183254, guid: 76594e2fe95689246bb4ac9aa846ed3c, type: 3}
+      propertyPath: m_Volume
+      value: 0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 5707488150257883796, guid: 76594e2fe95689246bb4ac9aa846ed3c, type: 3}
       propertyPath: m_Name
       value: AudioManager 1
@@ -473,9 +477,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8030398533031643243, guid: 76594e2fe95689246bb4ac9aa846ed3c, type: 3}
+      propertyPath: sfxSounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d9c9101e75fd29e46b2eaaa92e7605ee, type: 3}
+    - target: {fileID: 8030398533031643243, guid: 76594e2fe95689246bb4ac9aa846ed3c, type: 3}
+      propertyPath: sfxSounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c27e0f020620d1439d65d3b752725de, type: 3}
+    - target: {fileID: 8030398533031643243, guid: 76594e2fe95689246bb4ac9aa846ed3c, type: 3}
       propertyPath: musicSounds.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 0a80a95d2b94c7b468163aaa3f08552d, type: 3}
+      objectReference: {fileID: 8300000, guid: 8a5955ac681ca8a47847723bc64370fa, type: 3}
     - target: {fileID: 8030398533031643243, guid: 76594e2fe95689246bb4ac9aa846ed3c, type: 3}
       propertyPath: musicSounds.Array.data[1].name
       value: GameplayTheme

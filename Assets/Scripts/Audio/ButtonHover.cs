@@ -16,4 +16,10 @@ public class ButtonHover : MonoBehaviour
         // Play the hover sound
         AudioManager.Instance.PlaySFX("BtnHover");
     }
+
+    public void PlayClickSound()
+    {
+        // Play the click sound
+        AudioManager.Instance.PlaySFX("BtnClick");
+    }
 }

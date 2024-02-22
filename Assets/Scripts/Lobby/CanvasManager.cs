@@ -13,10 +13,12 @@ public class CanvasManager : MonoBehaviour
         {
             newGame.SetActive(false);
             selectGame.SetActive(true);
+            AudioManager.Instance.PlaySFX("BtnClick");
         }
         else
         {
             selectGame.SetActive(true);
+            AudioManager.Instance.PlaySFX("BtnClick");
         }
     }
 
@@ -26,10 +28,12 @@ public class CanvasManager : MonoBehaviour
         {
             selectGame.SetActive(false);
             newGame.SetActive(true);
+            AudioManager.Instance.PlaySFX("BtnClick");
         }
         else
         {
             newGame.SetActive(true);
+            AudioManager.Instance.PlaySFX("BtnClick");
         }
     }
 }

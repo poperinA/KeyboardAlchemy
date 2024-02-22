@@ -67,21 +67,42 @@ public class GameSelectManager : MonoBehaviour
         // Add Pointer Enter event
         EventTrigger.Entry pointerEnterEntry = new EventTrigger.Entry();
         pointerEnterEntry.eventID = EventTriggerType.PointerEnter;
-        pointerEnterEntry.callback.AddListener((data) => { game.GetComponent<ScaleAnim>().ScaleUp(); });
+        pointerEnterEntry.callback.AddListener((data) =>
+        {
+            game.GetComponent<ScaleAnim>().ScaleUp();
+            game.GetComponent<ButtonHover>().PlayHoverSound();
+        });
         eventTrigger.triggers.Add(pointerEnterEntry);
 
         // Add Pointer Exit event
         EventTrigger.Entry pointerExitEntry = new EventTrigger.Entry();
         pointerExitEntry.eventID = EventTriggerType.PointerExit;
-        pointerExitEntry.callback.AddListener((data) => { game.GetComponent<ScaleAnim>().ScaleDown(); });
+        pointerExitEntry.callback.AddListener((data) =>
+        {
+            game.GetComponent<ScaleAnim>().ScaleDown();
+        });
         eventTrigger.triggers.Add(pointerExitEntry);
+
+        // Add Pointer Down event
+        EventTrigger.Entry pointerDownEntry = new EventTrigger.Entry();
+        pointerDownEntry.eventID = EventTriggerType.PointerDown;
+        pointerDownEntry.callback.AddListener((data) =>
+        {
+            game.GetComponent<ButtonHover>().PlayClickSound();
+        });
+        eventTrigger.triggers.Add(pointerDownEntry);
 
         // Add Pointer Click event
         EventTrigger.Entry pointerClickEntry = new EventTrigger.Entry();
         pointerClickEntry.eventID = EventTriggerType.PointerClick;
-        pointerClickEntry.callback.AddListener((data) => { game.GetComponent<GameDisplay>().Clicked(); });
+        pointerClickEntry.callback.AddListener((data) =>
+        {
+            game.GetComponent<GameDisplay>().Clicked();
+        });
         eventTrigger.triggers.Add(pointerClickEntry);
     }
+
+
 
     // Method to hide the no games text and show the confirm button
     public void Check()
