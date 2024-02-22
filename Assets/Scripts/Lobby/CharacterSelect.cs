@@ -20,6 +20,7 @@ public class CharacterSelect : MonoBehaviour
         {
             David.SetActive(false);
             Megan.SetActive(true);
+            AudioManager.Instance.PlaySFX("btnClick");
         }
         else
         {
