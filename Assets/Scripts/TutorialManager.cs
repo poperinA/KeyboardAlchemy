@@ -61,7 +61,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject GameUI;
     public bool Stage4End = false;
 
-    public GameObject tutorialManager;
+    public GameObject Fill;
 
     private void Start()
     {
@@ -308,6 +308,7 @@ public class TutorialManager : MonoBehaviour
     public void EndTutorial()
     {
         Stage4Screen8.SetActive(false);
+        Fill.SetActive(true);
     }
 
     #endregion
