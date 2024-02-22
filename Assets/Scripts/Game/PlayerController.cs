@@ -84,4 +84,9 @@ public class PlayerController : MonoBehaviour
             animator.Play(WALK);
         }
     }
+
+    void Footsteps()
+    {
+        AudioManager.Instance.PlaySFX("Footstep");
+    }
 }

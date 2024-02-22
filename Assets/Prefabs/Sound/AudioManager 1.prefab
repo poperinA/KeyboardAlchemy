@@ -310,5 +310,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
   - name: BtnClick
     clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  - name: Footstep
+    clip: {fileID: 8300000, guid: c230389cdba1a4d47bda71c4d0e2b6f9, type: 3}
   musicSource: {fileID: 7308618689773445221}
   sfxSource: {fileID: 4448210180122183254}

@@ -17,6 +17,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             // Show the corresponding image
             correspondingImage.SetActive(true);
 
+            // Play the sound
+            AudioManager.Instance.PlaySFX("POP");
+
             // Disable dragging for the correct item
             draggableItem.enabled = false;
             correctItem.SetActive(false);
