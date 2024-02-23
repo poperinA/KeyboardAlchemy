@@ -42,6 +42,11 @@ public class AudioManager : MonoBehaviour
         {
             PlayMusic("GameplayTheme");
         }
+
+        if (scene.name == "Main Menu")
+        {
+            PlayMusic("StartTheme");
+        }
     }
 
     public void PlayMusic(string name)
